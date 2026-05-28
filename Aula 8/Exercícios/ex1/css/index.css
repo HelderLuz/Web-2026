@@ -1,0 +1,20 @@
+body {
+    background-color: cornflowerblue;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+h1 { 
+    color: crimson; 
+    text-align: center;
+}
+p {
+    color: yellowgreen;  
+    border: 20px groove greenyellow;
+}
+
+li, dd, dt {
+    color:darkorange;
+}
+dt {
+    font-size: 30px;
+}
