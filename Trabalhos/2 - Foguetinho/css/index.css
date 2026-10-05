@@ -1,0 +1,324 @@
+:root {
+  --text-banner: linear-gradient(135deg, var(--dark-purple), var(--accent));
+  --paragraph: var(--black);
+  --paragraph-accent: var(--accent);
+  --blockqute-bg: rgba(0, 0, 0, 0.1);
+}
+
+#banner {
+    height: calc(100vh - 86px);
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        text-align: center;
+        font-size: clamp(3.6rem, 7vw, 9rem);
+        margin: 0px 0px 30px;
+        color: var(--accent);
+        background: var(--text-banner);
+        background-clip: text;
+        color: transparent;
+    }
+
+    p {
+        text-align: center;
+        font-size: clamp(1.6rem, 1.6vw, 2rem);
+        color: var(--paragraph);
+
+        span {
+            color: var(--paragraph-accent);
+            font-weight: 500;
+        }
+    }
+
+    p:first-of-type {
+        font-size: clamp(1.8rem, 2vw, 2.6rem);
+        width: 70%;
+        margin: 0px auto 20px;
+    }
+
+    a {
+        margin: 10px auto 10px;
+        display: inline-block;
+        background-color: var(--secundary);
+        padding: 10px 40px;
+        border-radius: 50px;
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 2px 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+    }
+}
+
+#destaque {
+    margin: 10px 0px 100px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--paragraph);
+        font-size: clamp(2.4rem, 4vw, 3rem);
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        width: 70%;
+        margin: 20px auto;
+
+        article {
+            position: relative;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            background: var(--primary);
+            transition: all 0.3s;
+
+            &:hover .filter {
+                --gradient-angle: 225deg;
+            }
+
+            .filter {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    var(--gradient-angle),
+                    rgba(0, 0, 0, 0.4),
+                    rgba(0, 0, 0, 0.01) 50%,
+                    rgba(255, 255, 255, 0.01) 50%,
+                    rgba(255, 255, 255, 0.2)
+                );
+                border-radius: 10px;
+                z-index: 1;
+                transition: --gradient-angle 0.4s;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                border-radius: 10px;
+                filter: brightness(1.2);
+            }
+
+            .info-product {
+                box-sizing: border-box;
+                position: absolute;
+                bottom: 0px;
+                border-radius: 0px 0px 10px 10px;
+                width: 100%;
+                background: linear-gradient(rgba(255, 255, 255, 0.151), rgba(0, 0, 0, 0.151));
+                backdrop-filter: blur(10px);
+                padding: 10px 15px 15px;
+                color: var(--white);
+                z-index: 2;
+
+                h3 {
+                    margin: 5px;
+                    text-align: center;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                }
+
+                .buy-price {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .preco {
+                        font-weight: 700;
+                        margin: 0;
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+                        span {
+                            color: var(--secundary);
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    button {
+                        padding: 10px 30px;
+                        color: var(--white);
+                        border: none;
+                        border-radius: 50px;
+                        background: var(--secundary);
+                        color: var(--black);
+                        transition: all 0.2s;
+                        cursor: pointer;
+                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                        font-weight: 600;
+
+                        &:hover {
+                            background: var(--accent);
+                            color: var(--white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#depoimentos {
+    margin: 10px 0px 100px;
+    h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--paragraph);
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        margin: 100px auto;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        blockquote {
+            position: relative;
+            box-sizing: border-box;
+            background: var(--blockquote-bg);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 10px 20px;
+            width: 30%;
+            min-width: 300px;
+            color: var(--paragraph);
+            position: relative;
+            margin: 0 0 60px;
+            display: flex;
+            flex-direction: column;
+
+            &::before {
+                content: "“";
+                font-size: 4rem;
+                position: absolute;
+                top: -10px;
+                left: 10px;
+                color: var(--accent);
+                opacity: 0.3;
+            }
+
+            p {
+                width: 100%;
+                font-style: italic;
+                margin: 60px 0px 10px;
+                line-height: 1.4;
+                text-align: justify;
+                color: var(--paragraph);
+                font-size: 1.6rem;
+                min-height: 80px;
+                max-height: 150px;
+                overflow: hidden;
+                background-color: color-mix(in srgb, var(--accent) 20%, transparent);
+                padding: 30px 20px 30px;
+                border-radius: 5px;
+            }
+            
+            img {
+                position: absolute;
+                top: -50px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            }
+
+            cite {
+                text-align: right;
+                font-weight: 700;
+                color: var(--paragraph-accent);
+            }
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-banner: linear-gradient(135deg, var(--terciary), var(--secundary));
+        --paragraph: var(--white);
+        --paragraph-accent: var(--secundary);
+    }
+}
+
+@media (max-width: 1200px) {
+    #destaque > div {
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+    }
+    
+    #depoimentos div {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    #banner {
+      width: 80%;
+
+      h2 {
+          /* font-size: 6rem; */
+          padding: 0px 10px;
+      }
+
+      p:first-of-type {
+            width: 100%;
+        }
+    }
+
+
+
+    #depoimentos div {
+        width: 100%;
+        margin-top: 80px;
+
+        blockquote {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #banner {
+        height: calc(100vh - 154px);
+        flex-direction: column;
+        width: 90%;
+        h2 {
+            /* font-size: 6rem; */
+            padding: 0px 10px;
+        }
+
+        p:first-of-type {
+            width: 90%;
+        }
+    }
+
+    #destaque > div {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    #depoimentos div {
+        width: 90%;
+        margin-top: 80px;
+
+        blockquote {
+            width: 100%;
+        }
+    }
+}
