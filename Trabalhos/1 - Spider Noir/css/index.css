@@ -1,0 +1,13 @@
+img[alt*="Poster"] {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    body {
+        background-color: red;
+    }
+
+    #spider-noir-desvia {
+        width: 100px;
+    }
+}
