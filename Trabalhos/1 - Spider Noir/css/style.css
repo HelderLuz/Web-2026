@@ -1,5 +1,8 @@
 :root {
   font-size: 62.5%; /* 62,5% de 16px = 10px */
+  --header: #222;
+  --link-color: #aaa;
+  --link-color-hover: #fff;
 }
 
 * {
@@ -15,7 +18,7 @@ body {
 }
 
 header {
-    background: #222;
+    background: var(--header);
     padding: 20px;
     margin-bottom: 50px;
 }
@@ -39,17 +42,17 @@ header li::marker {
 }
 
 header a {
-    color: #aaa;
+    color: var(--link-color);
     text-decoration: none;
     font-size: 18px;
     padding: 10px 20px;
-    transition: all 1.3s ease-in-out;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-radius 0.5s 0.3s ease-in-out;
 }
 
 header a:hover {
-    color: #fff;
+    color: var(--link-color-hover);
     background-color: black;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 #spider-noir-desvia {
@@ -146,11 +149,19 @@ footer p {
 }
 
 @media (prefers-color-scheme: dark) {
-    header {
-        background-color: #29dfff;
-    }
-
     img[alt*="Poster"] {
         filter: grayscale(1);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --header: #ddd;
+        --header-link: #555;
+        --header-link-hover: #000;
+    }
+
+    #spider-noir-desvia {
+        filter: invert(.5);
     }
 }
