@@ -1,4 +1,12 @@
 const form = document.querySelector('form')
+const lista = document.querySelector('#list')
+
+lista.addEventListener('click', (e) => {
+    if(e.target.closest('button')) {
+        const card = e.target.parentElement
+        card.remove()
+    }
+})
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
