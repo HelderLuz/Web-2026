@@ -18,6 +18,5 @@ botaoRemover.addEventListener('click', (e) => {
     e.preventDefault()
 
     const chave = form.elements.chave.value
-
     localStorage.removeItem(chave)
 })
