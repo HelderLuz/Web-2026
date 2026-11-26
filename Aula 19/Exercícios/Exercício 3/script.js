@@ -1,6 +1,8 @@
 const form = document.querySelector('form')
 const lista = document.querySelector('#list')
 
+const listaCards = []
+
 lista.addEventListener('click', (e) => {
     if(e.target.closest('button')) {
         const card = e.target.parentElement
@@ -14,8 +16,10 @@ form.addEventListener('submit', (e) => {
     const formData = new FormData(form)
 
     const dados = Object.fromEntries(formData.entries())
-    console.log(dados)
     criarCard(dados)
+    listaCards.push(dados)
+    console.log(listaCards)
+    localStorage.setItem('listaCards', JSON.stringify(listaCards))
 })
 
 function criarCard(dados) {
